@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Jungle Ruins – मल्टीप्लेयर एडवेंचर</title>
+  <link rel="stylesheet" href="/style.css">
+  <!--IMPORTMAP-->
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Lobby -->
+  <div id="lobby">
+    <div class="panel">
+      <h1>🌴 Jungle Ruins</h1>
+      <p class="sub">दोस्तों के साथ जंगल की खोज · 2–4 खिलाड़ी ऑनलाइन</p>
+
+      <label for="name">तुम्हारा नाम</label>
+      <input id="name" maxlength="14" placeholder="जैसे: Rohan" autocomplete="off">
+
+      <button id="btnCreate" class="primary">नया रूम बनाओ</button>
+
+      <div class="or">या दोस्त के रूम में जुड़ो</div>
+      <div class="row">
+        <input id="code" maxlength="4" placeholder="कोड" autocomplete="off" spellcheck="false">
+        <button id="btnJoin">जुड़ो</button>
+      </div>
+
+      <p id="lobbyMsg"></p>
+      <p class="tips">WASD चलो · Shift दौड़ो · Space कूदो · माउस से देखो · Q/E कैमरा घुमाओ · स्क्रॉल से ज़ूम</p>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" hidden>
+    <div id="roomBox" class="box">
+      <div class="rc">रूम कोड: <b id="roomCode"></b> <button id="copyLink" title="दोस्त के लिए लिंक कॉपी करो">🔗 लिंक</button></div>
+      <ul id="players"></ul>
+    </div>
+    <div id="missionBox" class="box">
+      <div class="mh">मिशन</div>
+      <div id="missionList"></div>
+    </div>
+    <div id="toast"></div>
+    <div id="clickHint" hidden>माउस पकड़ने के लिए गेम पर क्लिक करो (Esc से छोड़ो)</div>
+  </div>
+
+  <!-- Touch controls (phones) -->
+  <div id="touchUI" hidden>
+    <div id="joyBase"><div id="joyStick"></div></div>
+    <button id="btnRun">दौड़ो</button>
+    <button id="btnJump">कूदो</button>
+  </div>
+
+  <!-- Win / disconnect overlay -->
+  <div id="overlay" hidden>
+    <div class="panel">
+      <h2 id="ovTitle"></h2>
+      <p id="ovBody"></p>
+      <button id="ovBtn" class="primary"></button>
+    </div>
+  </div>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
